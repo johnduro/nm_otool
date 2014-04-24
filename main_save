@@ -1,0 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mle-roy <mle-roy@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/04/21 16:23:27 by mle-roy           #+#    #+#             */
+/*   Updated: 2014/04/21 16:28:39 by mle-roy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "stdio.h"
+
+int		my_len(char *str)
+{
+	int		ret;
+
+	ret = 0;
+	while (*str)
+	{
+		str++;
+		ret++;
+	}
+	return (ret);
+}
+
+void	fake_print(char *str)
+{
+	int		len;
+
+	len = my_len(str);
+	printf("Len = %d; STR = %s\n", len, str);
+}
+
+int		main(int ac, char **av)
+{
+	int		i;
+
+	i = 1;
+	if (ac > 1)
+	{
+		while (av[i])
+		{
+			fake_print(av[i]);
+			i++;
+		}
+	}
+	return (0);
+}
